@@ -20,6 +20,11 @@ jobs:
       with:
         java-version: 17
 
-    - name: Build project with Maven
-      run: mvn -B package --file pom.xml
-      run: mvn clean compile
+    - name: Build project with Maven    
+      run: mvn -B clean package --file pom.xml
+
+    - name: Show compiled class files
+      run: |
+        echo "Compiled classes:"
+        ls -R target/classes || echo "No class files found"
+

@@ -29,3 +29,6 @@ jobs:
         echo "Compiled classes:"
         ls -R target/classes || echo "No class files found"
 
+    - name: List class files
+      run: find target/classes -type f -name "*.class"
+
